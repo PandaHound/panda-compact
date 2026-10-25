@@ -1,17 +1,61 @@
 {
   "name": "panda-compact",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Compaction without a summary: Haiku, inside your own session, decides which old tool calls and results to drop; every prompt and reply stays word for word.",
-  "author": { "name": "Rosbeh Zakikhani", "url": "https://github.com/PandaHound" },
+  "author": {
+    "name": "Rosbeh Zakikhani",
+    "url": "https://github.com/PandaHound"
+  },
   "license": "MIT",
   "userConfig": {
-    "compactAtPercent": { "type": "number", "title": "Compact at", "description": "Context fill (percent) at which the mod starts a compaction after a turn.", "default": 60 },
-    "model": { "type": "string", "title": "Judge model", "description": "The model that decides what to drop, as --model takes it.", "default": "haiku" },
-    "keepThreshold": { "type": "number", "title": "Keep threshold", "description": "Minimum probability that a call or result is still needed; below it the item goes.", "default": 0.5 },
-    "preserveRecentMessages": { "type": "number", "title": "Recent messages", "description": "Newest messages never touched (the first message is always kept).", "default": 6 },
-    "minReductionRatio": { "type": "number", "title": "Minimum cut", "description": "Minimum share of characters removed to use the result; below it the built-in summary runs.", "default": 0.25 },
-    "truncateHeadChars": { "type": "number", "title": "Result head", "description": "Characters kept from a result that is cut; 0 keeps only the note.", "default": 300 },
-    "maxStateTokens": { "type": "number", "title": "State tokens", "description": "Estimated size of the conversation sent to the judge.", "default": 60000 },
-    "maxRequestTokens": { "type": "number", "title": "Request tokens", "description": "Estimated size of one request, conversation plus questions.", "default": 80000 }
-  }
+    "compactAtPercent": {
+      "type": "number",
+      "title": "Compact at",
+      "description": "Context fill (percent) at which the mod starts a compaction after a turn.",
+      "default": 60
+    },
+    "model": {
+      "type": "string",
+      "title": "Judge model",
+      "description": "The model that decides what to drop, as --model takes it.",
+      "default": "haiku"
+    },
+    "keepThreshold": {
+      "type": "number",
+      "title": "Keep threshold",
+      "description": "Minimum probability that a call or result is still needed; below it the item goes.",
+      "default": 0.5
+    },
+    "preserveRecentMessages": {
+      "type": "number",
+      "title": "Recent messages",
+      "description": "Newest messages never touched (the first message is always kept).",
+      "default": 6
+    },
+    "minReductionRatio": {
+      "type": "number",
+      "title": "Minimum cut",
+      "description": "Minimum share of characters removed to use the result; below it the built-in summary runs.",
+      "default": 0.25
+    },
+    "truncateHeadChars": {
+      "type": "number",
+      "title": "Result head",
+      "description": "Characters kept from a result that is cut; 0 keeps only the note.",
+      "default": 300
+    },
+    "maxStateTokens": {
+      "type": "number",
+      "title": "State tokens",
+      "description": "Estimated size of the conversation sent to the judge.",
+      "default": 60000
+    },
+    "maxRequestTokens": {
+      "type": "number",
+      "title": "Request tokens",
+      "description": "Estimated size of one request, conversation plus questions.",
+      "default": 80000
+    }
+  },
+  "types": "./types/index.d.ts"
 }

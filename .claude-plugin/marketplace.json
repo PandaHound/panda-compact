@@ -1,13 +1,16 @@
 {
   "name": "panda-compact",
   "description": "Verbatim compaction for Claude Code, judged by Haiku in your own session.",
-  "owner": { "name": "Rosbeh Zakikhani", "url": "https://github.com/PandaHound" },
+  "owner": {
+    "name": "Rosbeh Zakikhani",
+    "url": "https://github.com/PandaHound"
+  },
   "plugins": [
     {
       "name": "panda-compact",
       "source": "./",
       "description": "Compaction without a summary: Haiku decides which old tool calls and results to drop.",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "license": "MIT"
     }
   ]

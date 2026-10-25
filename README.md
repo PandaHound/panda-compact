@@ -30,6 +30,28 @@ already go.
   toast says which of the two happened.
 - **No loops.** If a compaction of ours leaves the context still over the
   threshold, the next one is Claude Code's summary.
+- **Quiet.** Nothing is written in the conversation: the decisions go to the
+  debug log (`claude --debug`), and a short toast says how the compaction went.
+
+## The Compact pane
+
+The mod opens a small pane, **Compact**, beside the conversation (type
+`/panda-compact` to open it again after closing it):
+
+- a bar with how full the context is, and a mark above it where the automatic
+  compaction starts;
+- the fill and the threshold in words;
+- a **Compact** button that compacts now.
+
+In the desktop app the button runs `/compact` as if you typed it, since the
+app does not let a plugin start a compaction directly. In the terminal the bar
+is drawn in text.
+
+## Language
+
+The pane and the toasts follow Claude Code's `language` setting: English,
+Italian, Spanish, French, German and Portuguese. Any other language falls back
+to English.
 
 ## Install
 
@@ -65,7 +87,7 @@ compaction will go through the mod. Add this to `~/.claude/settings.json`:
 { "env": { "CLAUDE_AUTOCOMPACT_PCT_OVERRIDE": "60" } }
 ```
 
-The mod notices the refusal once, says so in the log and stops trying.
+The mod notices the refusal once, says so in the debug log and stops trying.
 
 ## Options
 
